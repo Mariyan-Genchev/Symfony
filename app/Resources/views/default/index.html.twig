@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="carousel slide" data-ride="carousel" id="mainSlider">
+
+                <ol class="carousel-indicators">
+                    <li class="active" data-target="#mainSlider" data-slide-to="0"></li>
+                    <li data-target="#mainSlider" data-slide-to="1"></li>
+                    <li data-target="#mainSlider" data-slide-to="2"></li>
+                    <li data-target="#mainSlider" data-slide-to="3"></li>
+                    <li data-target="#mainSlider" data-slide-to="4"></li>
+                    <li data-target="#mainSlider" data-slide-to="5"></li>
+                    <li data-target="#mainSlider" data-slide-to="6"></li>
+                </ol>
+
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="imgs/Wallpaper_1.jpg" alt="colour-background-1">
+                    </div>
+                    <div class="item">
+                        <img src="imgs/Wallpaper_2.jpg" alt="colour-background-2">
+                    </div>
+                    <div class="item">
+                        <img src="imgs/Wallpaper_3.jpg" alt="modernArt-background">
+                    </div>
+                    <div class="item">
+                        <img src="imgs/Wallpaper_4.jpg" alt="colour-background-3">
+                    </div>
+                    <div class="item">
+                        <img src="imgs/Wallpaper_5.jpg" alt="colour-background-4">
+                    </div>
+                    <div class="item">
+                        <img src="imgs/Wallpaper_6.jpg" alt="colour-background-5">
+                    </div>
+                    <div class="item">
+                        <img src="imgs/Wallpaper_7.jpg" alt="colour-background-6">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="well well-lg">
+        <h4><strong>Nulla facilisi </strong><span class="label label-success">new</h4>Use our site to add and manage your notes extremely quickly and easily. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris gravida ex quis metus porttitor viverra. Donec convallis justo in neque posuere suscipit. Mauris ac quam eget purus pharetra vulputate. Mauris consequat aliquet lectus. Nulla facilisi.</p>
+    </div>
+</div>
+
+{% include 'default/about.html.twig' %}
+
+{% endblock %}
+

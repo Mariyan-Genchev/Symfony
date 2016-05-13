@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="container notes-content">
+		{% if notes %}
+			<h2 class="note-title"><strong>My Notes</strong></h2>
+			<table class="table table-hover mytable">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Title</th>
+						<th class="col-md-8">Note</th>
+						<th class="hidden-xs">Created</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					{% set count = 1 %}
+					{% for note in notes %}
+						<tr onclick="window.document.location='/details/{{ note.id }}';">
+							<th scope="row">{{ count }}</th>
+							<td><strong>{{ note.title|capitalize }}</strong></td>
+							<td>{{ note.note|capitalize }}</td>
+							<td class="hidden-xs">{{ note.createDate|date('j F, g:i a')}}</td>
+							<td><a href="/delete/{{ note.id }}" class="btn btn-danger btn-sm">Delete</a></td>
+						</tr>
+						{% set count = count + 1 %}
+					{% endfor %}
+				</tbody>
+			</table>
+			{# display navigation #}
+			<div id="pagination">
+				{{ knp_pagination_render(notes) }}
+			</div>
+		{% else %}
+			<h2 class="note-title">Your notes list is empty!</h2>
+		{% endif %}
+		<div class="span2">
+			<a class="btn btn-success col-sm-2" href="/create">New note</a>
+		</div>
+	</div>
+{% endblock %}

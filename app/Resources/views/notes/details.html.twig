@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="container note-details">
+		<h2 class="note-title"><strong>{{ note.title|escape|capitalize }}</strong></h2>
+		<p class="note-content">{{ note.note|escape|capitalize }}</p>
+		<p class="date pull-left"><em>{{ note.createDate|date('g:i a, j F, Y') }}</em></p>
+	</div>
+	<div class="container">
+		<div class="btn-group pull-right">
+			<a class="btn btn-primary pull-left" href="/list">Back</a>
+			<a class="btn btn-success pull-right" href="/edit/{{ note.id }}">Edit</a>
+		</div>
+	</div>
+{% endblock %}
